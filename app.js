@@ -4,8 +4,17 @@ const countries = require("./countries.json");
  * @param  {string} isoCode
  * @returns {Object}
  */
+
 function getCountryByIso3(isoCode) {
   //Complete with your code
+  const countryName = countries.reduce(function (acc, cur) {
+    if (cur.iso3 === isoCode) {
+      acc = cur;
+    }
+    return acc;
+  }, {});
+
+  return countryName;
 }
 
 /**
